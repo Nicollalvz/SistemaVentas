@@ -12,6 +12,7 @@ namespace SistemaVentas
 {
     public partial class Form1 : Form
     {
+        // Modificación realizada por el Equipo A
         public Form1()
         {
             InitializeComponent();
