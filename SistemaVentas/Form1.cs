@@ -17,5 +17,28 @@ namespace SistemaVentas
         {
             InitializeComponent();
         }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtPrecio.Text) &&
+                    !string.IsNullOrWhiteSpace(txtCantidad.Text))
+                {
+                    double precio = Convert.ToDouble(txtPrecio.Text);
+                    int cantidad = Convert.ToInt32(txtCantidad.Text);
+                    double total = precio * cantidad;
+                    txtTotal.Text = total.ToString("F2");
+                }
+                else
+                {
+                    txtTotal.Clear();
+                }
+            }
+            catch
+            {
+                txtTotal.Text = "Error";
+            }
+        }
     }
 }
